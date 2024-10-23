@@ -43,7 +43,7 @@ export const HeroesList = () => {
         <p>Error: {error.message}</p>
     ) : (
         <>
-            <ul>
+            <ul className='heroes-list'>
                 {data?.pages.map((page) =>
                     page.results.map((hero: IHero) => (
                         <HeroItem key={hero.id} hero={hero}/>
