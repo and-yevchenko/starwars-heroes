@@ -50,7 +50,7 @@ export const HeroesList = () => {
                     )),
                 )}
             </ul>
-            {isFetchingNextPage && <p>Loading more heroes...</p>}
+            {isFetchingNextPage && <p className='heroes-loading'>Loading more heroes...</p>}
         </>
     );
 };

@@ -3,3 +3,12 @@
     flex-direction: column;
     gap: 1rem;
 }
+
+.heroes-loading {
+    text-align: center;
+    color: var(--color-text-white);
+    font-size: var(--text-size-large);
+    font-weight: 600;
+    letter-spacing: 0.15rem;
+    padding: 1.5rem 0;
+}

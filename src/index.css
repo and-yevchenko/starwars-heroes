@@ -6,6 +6,10 @@ body {
     margin: 0;
     min-width: 320px;
     min-height: 100vh;
+    background-color: #000;
+    background-image: url('./assets/images/background.jpg');
+    background-position: center;
+    background-size: contain;
 }
 
 * {
