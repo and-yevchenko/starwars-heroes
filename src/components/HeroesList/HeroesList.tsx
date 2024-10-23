@@ -3,6 +3,7 @@ import { getHeroes } from '../../services/listHeroesService';
 import { useCallback, useEffect } from 'react';
 import { useInfiniteQuery } from '@tanstack/react-query';
 import { IHero } from '../../services/types';
+import { HeroItem } from '../HeroItem/HeroItem';
 
 export const HeroesList = () => {
     const {
@@ -35,7 +36,7 @@ export const HeroesList = () => {
         return () => window.removeEventListener('scroll', handleScroll);
     }, [handleScroll]);
 
-    
+
     return status === 'pending' ? (
         <p>Loading...</p>
     ) : status === 'error' ? (
@@ -45,11 +46,7 @@ export const HeroesList = () => {
             <ul>
                 {data?.pages.map((page) =>
                     page.results.map((hero: IHero) => (
-                        <li key={hero.id}>
-                            <a href="/" title={hero.name}>
-                                {hero.name}
-                            </a>
-                        </li>
+                        <HeroItem key={hero.id} hero={hero}/>
                     )),
                 )}
             </ul>
