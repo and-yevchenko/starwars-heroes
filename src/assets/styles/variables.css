@@ -1,0 +1,8 @@
+:root {
+    --color-main: #ffffff;
+    --color-text-default: #000000;
+    --color-text-extra: #707070;
+    --text-size-default: 1rem;
+    --text-size-title: 2rem;
+    --text-size-small: 0.75rem;
+}
