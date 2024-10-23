@@ -38,9 +38,9 @@ export const HeroesList = () => {
 
 
     return status === 'pending' ? (
-        <p>Loading...</p>
+        <p className='status-message'>Loading...</p>
     ) : status === 'error' ? (
-        <p>Error: {error.message}</p>
+        <p className='status-message'>Error: {error.message}</p>
     ) : (
         <>
             <ul className='heroes-list'>
