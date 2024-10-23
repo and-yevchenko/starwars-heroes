@@ -46,7 +46,7 @@ export const HeroesList = () => {
             <ul className='heroes-list'>
                 {data?.pages.map((page) =>
                     page.results.map((hero: IHero) => (
-                        <HeroItem key={hero.id} hero={hero}/>
+                        <HeroItem key={hero.id} hero={hero} />
                     )),
                 )}
             </ul>
