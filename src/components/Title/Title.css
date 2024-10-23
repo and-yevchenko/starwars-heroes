@@ -1,0 +1,23 @@
+.title {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    padding: 3rem 0;
+    text-shadow: 0 0 20px #ffff00, 0 0 40px #ffff00, 0 0 40px #ffff00, 0px 0px 0px rgba(255,255,0,0.5);
+}
+
+.title-first {
+    color: #ffff00;
+    font-size: 4rem;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.title-second {
+    color: #ffffff;
+    font-size: 2rem;
+    font-weight: 900;
+    letter-spacing: 1rem;
+    line-height: 1;
+    text-transform: uppercase;
+}
