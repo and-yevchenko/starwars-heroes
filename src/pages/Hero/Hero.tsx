@@ -4,9 +4,11 @@ import { useQuery } from '@tanstack/react-query';
 import { getHero } from '../../services/heroService';
 import { getPlanet } from '../../services/planetService';
 import { getSpacie } from '../../services/specieService';
-import { IHero, IPlanet, ISpecie } from '../../services/types';
+import { IFilmsResponse, IHero, IPlanet, ISpecie, IStarshipResponse } from '../../services/types';
 import '@xyflow/react/dist/style.css';
 import { NodesContainer } from './NodesContainer';
+import { getFilm } from '../../services/filmService';
+import { getStarship } from '../../services/starshipService';
 
 export const Hero = () => {
     const { id } = useParams({ from: '/hero/$id' });
@@ -28,16 +30,31 @@ export const Hero = () => {
         enabled: !!character?.species[0],
     });
 
+    const { data: films, status: statusFilms } = useQuery<IFilmsResponse>({
+        queryKey: ['starship', character?.films],
+        queryFn: () => getFilm(id),
+    });
+
+    const { data: starships, status: statusStarships } = useQuery<IStarshipResponse>({
+        queryKey: ['starship', character?.starships],
+        queryFn: () => getStarship(id),
+    });
+
+
     if (
         statusCharacter === 'pending' ||
         statusPlanet === 'pending' ||
-        statusSpecie === 'pending'
+        statusSpecie === 'pending' ||
+        statusFilms === 'pending' ||
+        statusStarships === 'pending'
     )
         return <p className="status-message">Loading...</p>;
     if (
         statusCharacter === 'error' ||
         statusPlanet === 'error' ||
-        statusSpecie === 'error'
+        statusSpecie === 'error' ||
+        statusFilms === 'error' ||
+        statusStarships === 'error'
     )
         return <p className="status-message">Error</p>;
 
@@ -47,6 +64,8 @@ export const Hero = () => {
                 character={character}
                 planet={planet}
                 specie={specie}
+                films={films}
+                starships={starships}
                 statusPlanet={statusPlanet}
                 statusSpecie={statusSpecie}
             />

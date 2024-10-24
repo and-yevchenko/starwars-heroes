@@ -1,25 +1,17 @@
-import { useQuery } from '@tanstack/react-query';
-import './Starship.css';
-import { getStarship } from '../../../services/starshipService';
 import { IStarship } from '../../../services/types';
+import './Starship.css';
 
 interface Props {
-    id: number;
+    data: IStarship;
 }
 
-export const Starship = (props: Props) => {
-    const { data, status } = useQuery<IStarship>({
-        queryKey: ['starship', props.id],
-        queryFn: () => getStarship(props.id),
-    });
+export const Starship = ({data}: Props) => {
 
     return (
         <div className="starship">
             <p className="starship-label">starship:</p>
             <p className="starship-name">
-                {data?.name ||
-                    (status === 'pending' && 'Loading...') ||
-                    (status === 'error' && 'Unknown')}
+                {data.name}
             </p>
         </div>
     );

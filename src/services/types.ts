@@ -74,6 +74,10 @@ export interface IStarship {
     url: string;
 }
 
+export interface IStarshipResponse {
+    results: IStarship[]
+}
+
 export interface IFilm {
     characters: number[];
     created: string;
@@ -89,4 +93,8 @@ export interface IFilm {
     title: string;
     url: string;
     vehicles: number[];
+}
+
+export interface IFilmsResponse {
+    results: IFilm[]
 }

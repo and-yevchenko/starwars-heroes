@@ -7,13 +7,13 @@
 }
 
 .film-label {
-    font-size: var(--text-size-default);
+    font-size: var(--text-size-small);
     letter-spacing: 0.01rem;
     line-height: 1.5rem;
 }
 
 .film-name {
-    font-size: var(--text-size-default);
+    font-size: var(--text-size-small);
     letter-spacing: 0.01rem;
     line-height: 1.5rem;
     color: var(--color-text-accent);
