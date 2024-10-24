@@ -1,6 +1,7 @@
 import { useQuery } from '@tanstack/react-query';
 import './Starship.css';
 import { getStarship } from '../../../services/starshipService';
+import { IStarship } from '../../../services/types';
 
 interface Props {
     id: number
@@ -8,7 +9,7 @@ interface Props {
 
 export const Starship = (props: Props) => {
 
-    const { data, status } = useQuery({
+    const { data, status } = useQuery<IStarship>({
         queryKey: ['starship', props.id],
         queryFn: () => getStarship(props.id),
     });
