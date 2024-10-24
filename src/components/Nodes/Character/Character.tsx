@@ -1,26 +1,45 @@
 import { IHero, IPlanet, ISpecie } from '../../../services/types';
 import './Character.css';
 
-interface Props {
-    character: IHero,
-    specie: ISpecie | undefined,
-    planet: IPlanet | undefined ,
-    statusPlanet: string,
-    statusSpecie: string,
+interface NodeData {
+    character: IHero;
+    specie: ISpecie | undefined;
+    planet: IPlanet | undefined;
+    statusPlanet: string;
+    statusSpecie: string;
 }
 
-export const Character = (props:Props) => {
+interface Props {
+    data: NodeData;
+}
+
+export const Character = ({ data }: Props) => {
+    const { character, specie, planet, statusPlanet, statusSpecie } = data;
 
     return (
-    <div className='character'>
-        <img className='character-img' src={`https://starwars-visualguide.com/assets/img/characters/${props.character.id}.jpg`} alt={props.character.name} />
-        <p className='character-name'>{props.character.name}</p>
-        <div className='character-info'>
-            <p>Birth year: {props.character.birth_year}</p>
-            <p>Gender: {props.character.gender}</p>
-            <p>Specie: {props.specie?.name || props.statusSpecie === 'pending' && 'Loading...' || props.statusSpecie === 'error' && 'Unknown'}</p>
-            <p>Homeworld: {props.planet?.name || props.statusPlanet === 'pending' && 'Loading...' || props.statusPlanet === 'error' && 'Unknown'}</p>
+        <div className="character">
+            <img
+                className="character-img"
+                src={`https://starwars-visualguide.com/assets/img/characters/${character.id}.jpg`}
+                alt={character.name}
+            />
+            <p className="character-name">{character.name}</p>
+            <div className="character-info">
+                <p>Birth year: {character.birth_year}</p>
+                <p>Gender: {character.gender}</p>
+                <p>
+                    Specie:{' '}
+                    {specie?.name ||
+                        (statusSpecie === 'pending' && 'Loading...') ||
+                        (statusSpecie === 'error' && 'Unknown')}
+                </p>
+                <p>
+                    Homeworld:{' '}
+                    {planet?.name ||
+                        (statusPlanet === 'pending' && 'Loading...') ||
+                        (statusPlanet === 'error' && 'Unknown')}
+                </p>
+            </div>
         </div>
-    </div>
-    )
-}
+    );
+};

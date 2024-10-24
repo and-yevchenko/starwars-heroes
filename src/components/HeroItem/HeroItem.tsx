@@ -8,15 +8,22 @@ interface HeroItemProps {
 }
 
 export const HeroItem = ({ hero }: HeroItemProps) => {
-
-    const showAnimation = useShowAnimation()
+    const showAnimation = useShowAnimation();
 
     return (
         <li className={`hero-item${showAnimation.isVisible ? ' _show' : ''}`}>
-            <Link className='hero-link' to={`/hero/${hero.id}`} title={hero.name} >
-                <img className='hero-img' src={`https://starwars-visualguide.com/assets/img/characters/${hero.id}.jpg`} alt={hero.name} />
-                <span className='hero-name'>{hero.name}</span>
+            <Link
+                className="hero-link"
+                to={`/hero/${hero.id}`}
+                title={hero.name}
+            >
+                <img
+                    className="hero-img"
+                    src={`https://starwars-visualguide.com/assets/img/characters/${hero.id}.jpg`}
+                    alt={hero.name}
+                />
+                <span className="hero-name">{hero.name}</span>
             </Link>
         </li>
-    )
-}
+    );
+};

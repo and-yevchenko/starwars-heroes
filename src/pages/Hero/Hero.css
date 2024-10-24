@@ -6,3 +6,11 @@
     padding: 2rem;
 }
 
+.status-message {
+    text-align: center;
+    color: var(--color-text-white);
+    font-size: var(--text-size-large);
+    font-weight: 500;
+    letter-spacing: 0.1rem;
+    padding: 4rem 0;
+}
