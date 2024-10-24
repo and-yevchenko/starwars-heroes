@@ -1,4 +1,3 @@
-import { Handle, Position } from '@xyflow/react';
 import { IHero, IPlanet, ISpecie } from '../../../services/types';
 import './Character.css';
 
@@ -22,10 +21,6 @@ export const Character = (props:Props) => {
             <p>Specie: {props.specie?.name || props.statusSpecie === 'pending' && 'Loading...' || props.statusSpecie === 'error' && 'Unknown'}</p>
             <p>Homeworld: {props.planet?.name || props.statusPlanet === 'pending' && 'Loading...' || props.statusPlanet === 'error' && 'Unknown'}</p>
         </div>
-        <Handle
-            type="source"
-            position={Position.Bottom}
-        />
     </div>
     )
 }

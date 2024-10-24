@@ -6,7 +6,7 @@ import { getPlanet } from '../../services/planetService';
 import { getSpacie } from '../../services/specieService';
 import { Character } from '../../components/Nodes/Character/Character';
 import { IHero, IPlanet, ISpecie } from '../../services/types';
-import '@xyflow/react/dist/style.css';
+// import '@xyflow/react/dist/style.css';
 
 export const Hero = () => {
     const { id } = useParams({ from: '/hero/$id' });
