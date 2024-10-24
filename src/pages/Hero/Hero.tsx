@@ -1,9 +1,8 @@
+import { useParams } from '@tanstack/react-router';
 import './Hero.css';
 
 export const Hero = () => {
-    return (
-        <main className="hero">
-            000000000000000000000
-        </main>
-    );
+    const { id } = useParams({ from: '/hero/$id' });
+    
+    return <div>Hero ID: {id}</div>;
 };

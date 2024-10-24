@@ -22,7 +22,7 @@ const homeRoute = createRoute({
 
 const heroRoute = createRoute({
     getParentRoute: () => rootRoute,
-    path: '/hero/:id',
+    path: '/hero/$id',
     component: Hero,
 });
 
