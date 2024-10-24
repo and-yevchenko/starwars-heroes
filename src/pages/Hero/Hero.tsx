@@ -6,6 +6,7 @@ import { getPlanet } from '../../services/planetService';
 import { getSpacie } from '../../services/specieService';
 import { Character } from '../../components/Nodes/Character/Character';
 import { IHero, IPlanet, ISpecie } from '../../services/types';
+import { Starship } from '../../components/Nodes/Starship/Starship';
 // import '@xyflow/react/dist/style.css';
 
 export const Hero = () => {
@@ -36,6 +37,9 @@ export const Hero = () => {
     return (
         <main className='hero-page'>
             <Character character={character} specie={specie} planet={planet} statusPlanet={statusPlanet} statusSpecie={statusSpecie}/>
+            {character.starships.map((starship) => (
+                <Starship id={starship} key={starship} />
+            )) }
         </main>
     )
 };
