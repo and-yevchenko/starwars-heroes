@@ -1,12 +1,19 @@
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import { Home } from './pages/Home/Home';
+import { RouterProvider } from '@tanstack/react-router';
+import { router } from './routes/router';
 
 const queryClient = new QueryClient();
+
+declare module '@tanstack/react-router' {
+    interface Register {
+        router: typeof router;
+    }
+}
 
 function App() {
     return (
         <QueryClientProvider client={queryClient}>
-            <Home />
+            <RouterProvider router={router} />
         </QueryClientProvider>
     );
 }
