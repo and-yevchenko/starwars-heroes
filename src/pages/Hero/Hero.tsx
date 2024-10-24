@@ -4,22 +4,25 @@ import { useQuery } from '@tanstack/react-query';
 import { getHero } from '../../services/heroService';
 import { getPlanet } from '../../services/planetService';
 import { getSpacie } from '../../services/specieService';
+import { Character } from '../../components/Nodes/Character/Character';
+import { IHero, IPlanet, ISpecie } from '../../services/types';
+import '@xyflow/react/dist/style.css';
 
 export const Hero = () => {
     const { id } = useParams({ from: '/hero/$id' });
 
-    const { data: character, status: statusCharacter } = useQuery({
+    const { data: character, status: statusCharacter } = useQuery<IHero>({
         queryKey: ['character', id],
         queryFn: () => getHero(id),
     });
 
-    const { data: planet, status: statusPlanet } = useQuery({
+    const { data: planet, status: statusPlanet } = useQuery<IPlanet>({
         queryKey: ['planet', character?.homeworld],
         queryFn: () => getPlanet(character?.homeworld || null),
         enabled: !!character?.homeworld,
     });
     
-    const { data: specie, status: statusSpecie } = useQuery({
+    const { data: specie, status: statusSpecie } = useQuery<ISpecie>({
         queryKey: ['spacie', character?.species[0]],
         queryFn: () => getSpacie(character?.species[0] || null),
         enabled: !!character?.species[0],
@@ -29,18 +32,10 @@ export const Hero = () => {
     if (statusCharacter === 'pending') return <p>Loading...</p>
     if (statusCharacter === 'error') return <p>Error</p>
 
+
     return (
         <main className='hero-page'>
-            <div className='character'>
-                <img className='character-img' src={`https://starwars-visualguide.com/assets/img/characters/${id}.jpg`} alt={id} />
-                <p className='character-name'>{character.name}</p>
-                <div className='character-info'>
-                    <p>Birth year: {character.birth_year}</p>
-                    <p>Gender: {character.gender}</p>
-                    <p>Specie: {specie?.name || statusSpecie === 'pending' && 'Loading...' || statusSpecie === 'error' && 'Unknown'}</p>
-                    <p>Homeworld: {planet?.name || statusPlanet === 'pending' && 'Loading...' || statusPlanet === 'error' && 'Unknown'}</p>
-                </div>
-            </div>
+            <Character character={character} specie={specie} planet={planet} statusPlanet={statusPlanet} statusSpecie={statusSpecie}/>
         </main>
     )
 };

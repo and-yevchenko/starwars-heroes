@@ -1,5 +1,7 @@
-.hero {
-    max-width: 1280px;
+.hero-page {
+    /* max-width: 1280px; */
+    width: 100vw;
+    height: 100vh;
     margin: 0 auto;
     padding: 2rem;
 }
