@@ -3,6 +3,7 @@ import './Hero.css';
 import { useQuery } from '@tanstack/react-query';
 import { getHero } from '../../services/heroService';
 import { getPlanet } from '../../services/planetService';
+import { getSpacie } from '../../services/specieService';
 
 export const Hero = () => {
     const { id } = useParams({ from: '/hero/$id' });
@@ -18,7 +19,11 @@ export const Hero = () => {
         enabled: !!character?.homeworld,
     });
     
-    
+    const { data: specie, status: statusSpecie } = useQuery({
+        queryKey: ['spacie', character?.species[0]],
+        queryFn: () => getSpacie(character?.species[0] || null),
+        enabled: !!character?.species[0],
+    });
 
 
     if (statusCharacter === 'pending') return <p>Loading...</p>
@@ -32,7 +37,7 @@ export const Hero = () => {
                 <div className='character-info'>
                     <p>Birth year: {character.birth_year}</p>
                     <p>Gender: {character.gender}</p>
-                    <p>Specie: Human</p>
+                    <p>Specie: {specie?.name || statusSpecie === 'pending' && 'Loading...' || statusSpecie === 'error' && 'Unknown'}</p>
                     <p>Homeworld: {planet?.name || statusPlanet === 'pending' && 'Loading...' || statusPlanet === 'error' && 'Unknown'}</p>
                 </div>
             </div>
