@@ -17,3 +17,20 @@ export interface IHero {
     edited: string;
     url: string;
 }
+
+export interface IPlanet {
+    climate: string;
+    created: string;
+    diameter: string;
+    edited: string;
+    films: number[];
+    gravity: string;
+    name: string;
+    orbital_period: string;
+    population: string;
+    residents: number[];
+    rotation_period: string;
+    surface_water: string;
+    terrain: string;
+    url: string;
+}
