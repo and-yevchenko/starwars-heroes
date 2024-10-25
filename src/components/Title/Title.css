@@ -2,25 +2,35 @@
     text-align: center;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
     padding: 3rem 0;
     &._show {
-        text-shadow: 0 0 20px #ffff00, 0 0 40px #ffff00, 0 0 40px #ffff00, 0px 0px 0px rgba(255,255,0,0.5);
+        text-shadow:
+            0 0 20px #ffff00,
+            0 0 40px #ffff00,
+            0 0 40px #ffff00,
+            0px 0px 0px rgba(255, 255, 0, 0.5);
         transition: text-shadow 2s ease;
     }
 }
 
 .title-first {
     color: #ffff00;
-    font-size: 4rem;
+    font-size: clamp(3rem, 15.05vw, 4rem);
     font-weight: 700;
     line-height: 1;
 }
 
 .title-second {
     color: #ffffff;
-    font-size: 2rem;
+    font-size: clamp(1.5rem, 7.52vw, 2rem);
     font-weight: 900;
     letter-spacing: 1rem;
     line-height: 1;
     text-transform: uppercase;
+    &::after {
+        content: '';
+        margin-left: -1rem;
+    }
 }

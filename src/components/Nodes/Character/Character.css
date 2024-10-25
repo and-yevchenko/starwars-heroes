@@ -1,0 +1,35 @@
+.character {
+    width: fit-content;
+    background-color: var(--color-main);
+    border: 3px solid var(--color-text-extra);
+    text-align: center;
+    max-width: 150px;
+}
+
+.character-img {
+    object-fit: cover;
+    width: 100%;
+}
+
+.character-name {
+    font-size: var(--text-size-default);
+    font-weight: 600;
+    letter-spacing: 0.05rem;
+    line-height: 1.5;
+    padding: 0.5rem;
+}
+
+.character-info {
+    padding: 0.5rem;
+    > * {
+        font-size: var(--text-size-small);
+        letter-spacing: 0.01rem;
+        line-height: 1.5;
+    }
+}
+
+.circle-edge {
+    width: 8px;
+    height: 8px;
+    background-color: var(--color-text-accent);
+}
