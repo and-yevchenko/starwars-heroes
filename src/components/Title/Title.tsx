@@ -2,6 +2,7 @@ import { useShowAnimation } from '../../hooks/useShowAnimation';
 import './Title.css';
 
 export const Title = () => {
+    // Call the hook that starts the smooth appearance animation
     const showAnimation = useShowAnimation();
 
     return (

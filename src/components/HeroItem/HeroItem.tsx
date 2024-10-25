@@ -8,7 +8,8 @@ interface HeroItemProps {
 }
 
 export const HeroItem = ({ hero }: HeroItemProps) => {
-    const showAnimation = useShowAnimation();
+    // Call the hook that starts the smooth appearance animation
+    const showAnimation = useShowAnimation(); 
 
     return (
         <li className={`hero-item${showAnimation.isVisible ? ' _show' : ''}`}>

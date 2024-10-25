@@ -30,6 +30,7 @@ export const Character = ({ data }: Props) => {
                 <p>Homeworld: {planet?.name}</p>
             </div>
             <Handle
+                // This component uses React Flow to display connection points
                 type="source"
                 position={Position.Right}
                 className="circle-edge"

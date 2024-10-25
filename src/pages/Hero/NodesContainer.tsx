@@ -29,6 +29,7 @@ interface Props {
 export const NodesContainer = (props: Props) => {
     const { character, specie, planet, films, starships } = props;
 
+    //Create nodes for the films in which the character participated
     const filmNodes = films.results.map((film: IFilm, index: number) => ({
         id: `${film.id}`,
         type: 'film-node',
@@ -37,7 +38,8 @@ export const NodesContainer = (props: Props) => {
             title: film.title,
         },
     }));
-
+    
+    //Create nodes for the spaceships the character flew on
     const starshipNodes = starships.results.map(
         (starship: IStarship, index: number) => ({
             id: `${starship.id}`,
@@ -48,7 +50,7 @@ export const NodesContainer = (props: Props) => {
             },
         }),
     );
-
+    //Create edges from the main node to the films nodes
     const filmEdges = films.results.map((film: IFilm) => ({
         id: `${character.name}-${film.id}`,
         type: 'custom-edge',
@@ -56,6 +58,7 @@ export const NodesContainer = (props: Props) => {
         target: `${film.id}`,
     }));
 
+    //Сreate edges from films nodes to starships nodes based on which spaceships were in specific films
     const starshipEdges = starships.results
         .map((starship: IStarship) => {
             return starship.films.map((shipfilm) => ({
@@ -65,7 +68,7 @@ export const NodesContainer = (props: Props) => {
                 target: `${starship.id}`,
             }));
         })
-        .flat();
+        .flat(); //sub-array elements concatenated
 
     const initialNodes: Node[] = [
         {
@@ -91,11 +94,12 @@ export const NodesContainer = (props: Props) => {
 
     const [nodes, setNodes, onNodesChange] = useNodesState(initialNodes);
     const [edges, setEdges, onEdgesChange] = useEdgesState(initialEdges);
+    //Add the ability to connect nodes
     const onConnect = useCallback(
         (params: Connection) => setEdges((eds) => addEdge(params, eds)),
         [setEdges],
     );
-
+    //Update nodes and edges
     useEffect(() => {
         setEdges([...filmEdges, ...starshipEdges]);
         setNodes([...initialNodes, ...filmNodes, ...starshipNodes]);
