@@ -1,3 +1,4 @@
+import { Handle, Position } from '@xyflow/react';
 import { IHero, IPlanet, ISpecie } from '../../../services/types';
 import './Character.css';
 
@@ -40,6 +41,12 @@ export const Character = ({ data }: Props) => {
                         (statusPlanet === 'error' && 'Unknown')}
                 </p>
             </div>
+            <Handle
+                id={`${character.id}`}
+                type="source"
+                position={Position.Right}
+                className='circle-edge'
+            />
         </div>
     );
 };

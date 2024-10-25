@@ -54,6 +54,7 @@ export interface ISpecie {
 }
 
 export interface IStarship {
+    id: string;
     MGLT: string;
     cargo_capacity: string;
     consumables: string;
@@ -79,6 +80,7 @@ export interface IStarshipResponse {
 }
 
 export interface IFilm {
+    id: string;
     characters: number[];
     created: string;
     director: string;

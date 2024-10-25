@@ -27,3 +27,9 @@
         line-height: 1.5;
     }
 }
+
+.circle-edge {
+    width: 8px;
+    height: 8px;
+    background-color: var(--color-text-accent);
+}

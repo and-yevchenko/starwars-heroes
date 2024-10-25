@@ -1,3 +1,4 @@
+import { Handle, Position } from '@xyflow/react';
 import { IStarship } from '../../../services/types';
 import './Starship.css';
 
@@ -13,6 +14,11 @@ export const Starship = ({data}: Props) => {
             <p className="starship-name">
                 {data.name}
             </p>
+            <Handle
+                type="target"
+                position={Position.Left}
+                className='circle-edge'
+            />
         </div>
     );
 };

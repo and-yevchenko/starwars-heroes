@@ -1,3 +1,4 @@
+import { Handle, Position } from '@xyflow/react';
 import { IFilm } from '../../../services/types';
 import './Film.css';
 
@@ -13,6 +14,16 @@ export const Film = ({data}: Props) => {
             <p className="film-name">
                 {data.title}
             </p>
+            <Handle
+                type="source"
+                position={Position.Right}
+                className='circle-edge'
+            />
+            <Handle
+                type="target"
+                position={Position.Left}
+                className='circle-edge'
+            />
         </div>
     );
 };
