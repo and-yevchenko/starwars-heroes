@@ -76,7 +76,7 @@ export interface IStarship {
 }
 
 export interface IStarshipResponse {
-    results: IStarship[]
+    results: IStarship[];
 }
 
 export interface IFilm {
@@ -98,5 +98,5 @@ export interface IFilm {
 }
 
 export interface IFilmsResponse {
-    results: IFilm[]
+    results: IFilm[];
 }

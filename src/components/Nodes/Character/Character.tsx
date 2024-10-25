@@ -6,8 +6,6 @@ interface NodeData {
     character: IHero;
     specie: ISpecie | undefined;
     planet: IPlanet | undefined;
-    statusPlanet: string;
-    statusSpecie: string;
 }
 
 interface Props {
@@ -15,7 +13,7 @@ interface Props {
 }
 
 export const Character = ({ data }: Props) => {
-    const { character, specie, planet, statusPlanet, statusSpecie } = data;
+    const { character, specie, planet } = data;
 
     return (
         <div className="character">
@@ -28,24 +26,13 @@ export const Character = ({ data }: Props) => {
             <div className="character-info">
                 <p>Birth year: {character.birth_year}</p>
                 <p>Gender: {character.gender}</p>
-                <p>
-                    Specie:{' '}
-                    {specie?.name ||
-                        (statusSpecie === 'pending' && 'Loading...') ||
-                        (statusSpecie === 'error' && 'Unknown')}
-                </p>
-                <p>
-                    Homeworld:{' '}
-                    {planet?.name ||
-                        (statusPlanet === 'pending' && 'Loading...') ||
-                        (statusPlanet === 'error' && 'Unknown')}
-                </p>
+                <p>Specie: {specie?.name}</p>
+                <p>Homeworld: {planet?.name}</p>
             </div>
             <Handle
-                id={`${character.id}`}
                 type="source"
                 position={Position.Right}
-                className='circle-edge'
+                className="circle-edge"
             />
         </div>
     );

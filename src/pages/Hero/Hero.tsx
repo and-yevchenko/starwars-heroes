@@ -4,7 +4,13 @@ import { useQuery } from '@tanstack/react-query';
 import { getHero } from '../../services/heroService';
 import { getPlanet } from '../../services/planetService';
 import { getSpacie } from '../../services/specieService';
-import { IFilmsResponse, IHero, IPlanet, ISpecie, IStarshipResponse } from '../../services/types';
+import {
+    IFilmsResponse,
+    IHero,
+    IPlanet,
+    ISpecie,
+    IStarshipResponse,
+} from '../../services/types';
 import '@xyflow/react/dist/style.css';
 import { NodesContainer } from './NodesContainer';
 import { getFilm } from '../../services/filmService';
@@ -35,11 +41,11 @@ export const Hero = () => {
         queryFn: () => getFilm(id),
     });
 
-    const { data: starships, status: statusStarships } = useQuery<IStarshipResponse>({
-        queryKey: ['starship', character?.starships],
-        queryFn: () => getStarship(id),
-    });
-
+    const { data: starships, status: statusStarships } =
+        useQuery<IStarshipResponse>({
+            queryKey: ['starship', character?.starships],
+            queryFn: () => getStarship(id),
+        });
 
     if (
         statusCharacter === 'pending' ||

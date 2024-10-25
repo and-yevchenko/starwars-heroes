@@ -6,18 +6,15 @@ interface Props {
     data: IStarship;
 }
 
-export const Starship = ({data}: Props) => {
-
+export const Starship = ({ data }: Props) => {
     return (
         <div className="starship">
             <p className="starship-label">starship:</p>
-            <p className="starship-name">
-                {data.name}
-            </p>
+            <p className="starship-name">{data.name}</p>
             <Handle
                 type="target"
                 position={Position.Left}
-                className='circle-edge'
+                className="circle-edge"
             />
         </div>
     );
