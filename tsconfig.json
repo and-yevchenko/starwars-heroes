@@ -1,4 +1,9 @@
 {
+    "compilerOptions": {
+        "forceConsistentCasingInFileNames": true,
+        "strict": true,
+        "types": ["vitest/globals"]
+    },
     "files": [],
     "references": [
         { "path": "./tsconfig.app.json" },
