@@ -12,6 +12,16 @@ You can view the assembled website: [starwars-heroes-six.vercel.app](https://sta
 
 ## 🏃‍♂️ Running the Unit Test
 
+This project uses Vitest for testing and Istanbul for code coverage. Follow the instructions below to run tests and generate code coverage reports.
+
+Use the following command to run all tests:
+`npm run test`
+
+Use the following command to generate a code coverage report:
+`npm run coverage`
+
+After executing this command, a report on code coverage will be created, which can be viewed in the terminal as text. For more convenient viewing, you can open the HTML report, which will be located in the `coverage` folder.
+
 ## 📦 Technologies
 
 - `Type Script`
@@ -53,8 +63,6 @@ This project sharpened my ability to tackle complex challenges, introduced me to
 -   Improve the graphs so they adjust their layout on devices with smaller screen widths for better UI.
 -   Add additional nodes to the graphs, such as planets.
 -   Add more brightly coloured tables and interactivity, for example, add elements that can be manually illuminated like a 'Jedi sword'
-
-
 
 ## 😍 Performance
 
