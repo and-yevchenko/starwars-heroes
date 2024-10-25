@@ -1,4 +1,4 @@
-import { useParams } from '@tanstack/react-router';
+import { Link, useParams } from '@tanstack/react-router';
 import './Hero.css';
 import { useQuery } from '@tanstack/react-query';
 import { getHero } from '../../services/heroService';
@@ -68,6 +68,7 @@ export const Hero = () => {
 
     return (
         <main className="hero-page">
+            <Link to='/' className='close-link'>close</Link>
             <NodesContainer
                 //Created a separate container in which nodes and edges will be initialised
                 character={character}
