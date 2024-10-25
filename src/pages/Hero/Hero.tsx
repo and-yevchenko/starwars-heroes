@@ -72,8 +72,6 @@ export const Hero = () => {
                 specie={specie}
                 films={films}
                 starships={starships}
-                statusPlanet={statusPlanet}
-                statusSpecie={statusSpecie}
             />
         </main>
     );

@@ -36,15 +36,14 @@ export const HeroesList = () => {
         return () => window.removeEventListener('scroll', handleScroll);
     }, [handleScroll]);
 
-    return status === 'pending' ? (
-        <p className="status-message">Loading...</p>
-    ) : status === 'error' ? (
-        <p className="status-message">Error: {error.message}</p>
-    ) : (
+    if (status === 'pending') return <p className="status-message">Loading...</p>
+    if (status === 'error') return <p className="status-message">Error: {error.message}</p>
+
+    return (
         <>
             <ul className="heroes-list">
-                {data?.pages.map((page) =>
-                    page.results.map((hero: IHero) => (
+                {status === 'success' && data?.pages.map((page) =>
+                    page?.results?.map((hero: IHero) => (
                         <HeroItem key={hero.id} hero={hero} />
                     )),
                 )}
