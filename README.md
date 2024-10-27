@@ -12,7 +12,7 @@ You can view the assembled website: [starwars-heroes-six.vercel.app](https://sta
 
 ## 🏃‍♂️ Running the Unit Test
 
-This project uses Vitest for testing and Istanbul for code coverage. Follow the instructions below to run tests and generate code coverage reports.
+This project uses **Vitest** for testing and Istanbul for code coverage. Follow the instructions below to run tests and generate code coverage reports.
 
 Use the following command to run all tests:
 `npm run test`
@@ -29,8 +29,10 @@ After executing this command, a report on code coverage will be created, which c
 - `Vite`
 - `TanStack Router`
 - `TanStack Query`
+- `React Flow`
 - `Axios`
 - `HTML & CSS`
+- `Vitest`
 
 ## 🪓 Features & Process
 
