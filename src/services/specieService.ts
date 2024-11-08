@@ -1,8 +1,7 @@
-import axios from 'axios';
-import { API_URL } from '../constants/api';
 import { ISpecie } from './types';
+import instance from './axiosConfig';
 
 export async function getSpacie(id: number | null) {
-    const { data } = await axios.get<ISpecie>(`${API_URL}/species/${id}`);
+    const { data } = await instance.get<ISpecie>(`/species/${id}`);
     return data;
 }

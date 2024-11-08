@@ -1,8 +1,7 @@
-import axios from 'axios';
-import { API_URL } from '../constants/api';
 import { IPlanet } from './types';
+import instance from './axiosConfig';
 
 export async function getPlanet(id: number | null) {
-    const { data } = await axios.get<IPlanet>(`${API_URL}/planets/${id}`);
+    const { data } = await instance.get<IPlanet>(`/planets/${id}`);
     return data;
 }

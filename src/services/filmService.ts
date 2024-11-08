@@ -1,7 +1,6 @@
-import axios from 'axios';
-import { API_URL } from '../constants/api';
+import instance from './axiosConfig';
 
 export async function getFilm(id: string) {
-    const { data } = await axios.get(`${API_URL}/films/?characters=${id}`);
+    const { data } = await instance.get(`/films/?characters=${id}`);
     return data;
 }

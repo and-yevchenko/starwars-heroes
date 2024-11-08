@@ -1,8 +1,7 @@
-import axios from 'axios';
-import { API_URL } from '../constants/api';
 import { IHero } from './types';
+import instance from './axiosConfig';
 
 export async function getHero(id: string) {
-    const { data } = await axios.get<IHero>(`${API_URL}/people/${id}`);
+    const { data } = await instance.get<IHero>(`/people/${id}`);
     return data;
 }

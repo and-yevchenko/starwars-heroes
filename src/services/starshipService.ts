@@ -1,7 +1,6 @@
-import axios from 'axios';
-import { API_URL } from '../constants/api';
+import instance from './axiosConfig';
 
 export async function getStarship(id: string) {
-    const { data } = await axios.get(`${API_URL}/starships/?pilots=${id}`);
+    const { data } = await instance.get(`/starships/?pilots=${id}`);
     return data;
 }
