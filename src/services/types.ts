@@ -3,10 +3,10 @@ export interface IHero {
     name: string;
     height: string;
     mass: string;
-    hair_color: string;
-    skin_color: string;
-    eye_color: string;
-    birth_year: string;
+    hairСolor: string;
+    skinСolor: string;
+    eyeСolor: string;
+    birthYear: string;
     gender: string;
     homeworld: number;
     films: number[];
@@ -26,52 +26,52 @@ export interface IPlanet {
     films: number[];
     gravity: string;
     name: string;
-    orbital_period: string;
+    orbitalPeriod: string;
     population: string;
     residents: number[];
-    rotation_period: string;
-    surface_water: string;
+    rotationPeriod: string;
+    surfaceWater: string;
     terrain: string;
     url: string;
 }
 
 export interface ISpecie {
-    average_height: string;
-    average_lifespan: string;
+    averageHeight: string;
+    averageLifespan: string;
     classification: string;
     created: string;
     designation: string;
     edited: string;
-    eye_colors: string;
-    hair_colors: string;
+    eyeColors: string;
+    hairColors: string;
     homeworld: number;
     language: string;
     name: string;
     people: number[];
     films: number[];
-    skin_colors: string;
+    skinColors: string;
     url: string;
 }
 
 export interface IStarship {
     id: string;
     MGLT: string;
-    cargo_capacity: string;
+    cargoCapacity: string;
     consumables: string;
-    cost_in_credits: string;
+    costInCredits: string;
     created: string;
     crew: string;
     edited: string;
-    hyperdrive_rating: string;
+    hyperdriveRating: string;
     length: string;
     manufacturer: string;
-    max_atmosphering_speed: string;
+    maxAtmospheringSpeed: string;
     model: string;
     name: string;
     passengers: string;
     films: number[];
     pilots: string[];
-    starship_class: string;
+    starshipClass: string;
     url: string;
 }
 
@@ -85,11 +85,11 @@ export interface IFilm {
     created: string;
     director: string;
     edited: string;
-    episode_id: number;
-    opening_crawl: string;
+    episodeId: number;
+    openingCrawl: string;
     planets: number[];
     producer: string;
-    release_date: string;
+    releaseDate: string;
     species: number[];
     starships: number[];
     title: string;

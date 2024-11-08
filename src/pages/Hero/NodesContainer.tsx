@@ -79,7 +79,7 @@ export const NodesContainer = (props: Props) => {
                 character: {
                     id: character?.id || '',
                     name: character?.name || 'Loading...',
-                    birth_year: character?.birth_year || 'Loading...',
+                    birthYear: character?.birthYear || 'Loading...',
                     gender: character?.gender || 'Loading...',
                 },
                 specie: { name: specie?.name || 'Loading...' },

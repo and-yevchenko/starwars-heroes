@@ -24,8 +24,8 @@ export const Character = ({ data }: Props) => {
             />
             <p className="character-name">{character.name}</p>
             <div className="character-info">
-                <p>Birth year: {character.birth_year}</p>
-                <p>Gender: {character.gender}</p>
+                <p>Birth year: {character?.birthYear}</p>
+                <p>Gender: {character?.gender}</p>
                 <p>Specie: {specie?.name}</p>
                 <p>Homeworld: {planet?.name}</p>
             </div>
